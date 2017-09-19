@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/events/create">Create an Event</a></h3>
+      <h1>Event List</h1>
+      <% if(event.length>0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Start Date</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<event.length;i++) { %>
+            <tr>
+              <td><a href="/events/show/<%= events[i]._id%>"><%= events[i].event_title%></a></td>
+              <td><%= events[i].start_date%></td>
+              <td><%= events[i].end_date%></td>
+              <td><%= events[i].location%></td>
+              <td><%= events[i].description%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No events found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>

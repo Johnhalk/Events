@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/events">Event List</a></h3>
+      <h1>Event Detail</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Event</td>
+            <td>:</td>
+            <td><%= event.event_title %></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>:</td>
+            <td>$<%= event.description %></td>
+          </tr>
+          <tr>
+            <td>Start Date</td>
+            <td>:</td>
+            <td><%= event.start_date %></td>
+          </tr>
+          <tr>
+            <td>End Date</td>
+            <td>:</td>
+            <td><%= event.end_date %></td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>:</td>
+            <td>$<%= event.location %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3><a href="/event/edit/<%= event._id%>">EDIT</a></h3>
+      <form action="/events/delete/<%= event._id%>" method="post">
+        <button type="submit">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>
