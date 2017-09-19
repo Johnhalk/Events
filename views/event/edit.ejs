@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Event</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/events">Event List</a></h3>
+      <h1>Edit Event</h1>
+      <form action="/events/update/<%= event._id%>" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>Event Title</td>
+              <td><input type="text" name="event_title" /></td>
+            </tr>
+            <tr>
+              <td>Start Date</td>
+              <td><input type="text" name="start_date" /></td>
+            </tr>
+            <tr>
+              <td>End Date</td>
+              <td><input type="text" name="end_date" /></td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td><input type="text" name="location" /></td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td><input type="text" name="description" /></td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+              <td colspan="2"><button type="submit">Update</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
