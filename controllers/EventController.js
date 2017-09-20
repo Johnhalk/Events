@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Event = mongoose.model('Event');
 
-var eventController = {
+var eventController = {}
 
   // Show list of events function
 
@@ -20,7 +20,7 @@ var eventController = {
   // Show single event by id function,
 
   eventController.show = function(req, res) {
-    Event.findOne({_id: req.params.id}).exec(function (err, employee) {
+    Event.findOne({_id: req.params.id}).exec(function (err, event) {
       if (err) {
         console.log("Error", err);
       }
@@ -47,7 +47,7 @@ var eventController = {
         res.render("../views/events/create");
       } else {
         console.log("Successfully created an event.");
-        res.redirect("Events/show"+event._id);
+        res.redirect("/events/show/"+event._id);
       }
     });
   };
@@ -90,4 +90,4 @@ var eventController = {
     });
   };
 
-}
+module.exports = eventController;

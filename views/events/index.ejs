@@ -8,7 +8,7 @@
     <div class="container">
       <h3><a href="/events/create">Create an Event</a></h3>
       <h1>Event List</h1>
-      <% if(event.length>0) { %>
+      <% if(events.length>0) { %>
       <table>
         <thead>
           <tr>
@@ -18,9 +18,10 @@
         </thead>
         <tbody>
 
-          <% for(var i=0; i<event.length;i++) { %>
+          <% for(var i=0; i<events.length;i++) { %>
             <tr>
-              <td><a href="/events/show/<%= events[i]._id%>"><%= events[i].event_title%></a></td>
+              <td><a href="/events/show/<%= events[i]._id%>"> Delete</a></td>
+              <td><%= events[i].event_title%></td>
               <td><%= events[i].start_date%></td>
               <td><%= events[i].end_date%></td>
               <td><%= events[i].location%></td>

@@ -6,9 +6,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+require('./models/event')
+var events = require('./routes/events');
 var index = require('./routes/index');
 var users = require('./routes/users');
-var events = require('./routes/events');
+
+
+
 
 var app = express();
 
@@ -18,7 +22,9 @@ mongoose.connect('mongodb://localhost/product')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
+app.engine('ejs', require('ejs').renderFile);
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
